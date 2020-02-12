@@ -227,11 +227,18 @@
 
         valores[0][mes][dia] = respostas.MISTO;
 
-        for (let index = 0; index < 3; index++) {
-            if ((listaRespostas[index] == nomes.length - 1)) {
-                valores[0][mes][dia] = index;
-            }
+        if ((listaRespostas[respostas.NAO] >= 2)) {
+            valores[0][mes][dia] = respostas.NAO;
         }
+
+        if ((listaRespostas[respostas.SIM] >= (nomes.length -2 ))) {
+            valores[0][mes][dia] = respostas.SIM;
+        }
+
+        if ((listaRespostas[respostas.NEUTRO] == (nomes.length - 1))) {
+            valores[0][mes][dia] = respostas.NEUTRO;
+        }
+
     }
 
     function exibeNovosValores(dia, mes) {
