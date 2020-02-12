@@ -60,8 +60,6 @@
         }            
     }
 
-    valores[0][0][1] = respostas.SIM;   
-
     retrieveData();
     
     /**
@@ -771,7 +769,7 @@
 
     function retrieveData() {
         
-        var range = "Dados!A2:M" + nomes.length;
+        var range = "Dados!A2:M" + (nomes.length + 1);
      
         var gs_sid = '12ot_Wbhk1VmJn5UutzR69oRH42tmLL_-3by5zIw_n4E'; // Enter your Google Sheet ID here
         var gs_clid = '100883981961-e2btj6pveo11eg212a6ub3svk067fb41.apps.googleusercontent.com'; // Enter your API Client ID here
