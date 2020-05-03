@@ -12,6 +12,11 @@
  * Date: 2014-08-17 sunday
  */
 
+body {
+    text-align: center;
+    border: 0 auto;
+}
+
 .dycalendar-container {
     display: inline-block;
     border : 1px solid #eee;
@@ -60,8 +65,11 @@
 /*================================== MONTH CALENDAR DEFAULT ========================*/
 
 .tabela-calendarios {
-    border-collapse: collapse;
-    table-layout: auto;
+   width: 99%;
+   height: 850px;
+   align-content: center;
+   display: block;
+   overflow: scroll;
 }
 
 .tabela-calendarios .tabela-calendarios-linha {
@@ -70,7 +78,7 @@
 }
 
 .tabela-calendarios .tabela-calendarios-celula {
-    vertical-align: top;
+    vertical-align: middle;
 }
 
 .tabela-calendarios .tabela-calendarios-nome {
@@ -78,32 +86,29 @@
     vertical-align: middle;
     font-size: x-large;
     padding: 8px 12px;
+
 }
 
 .tabela-calendarios .tabela-calendarios-linha-cabecalho {
-    border: 1px solid black;
-    vertical-align: top;
+    width: 98%;
+    height: 330px;
     background-color: YELLOW;
+    position: absolute;
+    overflow: scroll;
+    display: block;
+
 }
 
 .tabela-calendarios .tabela-calendarios-celula-cabecalho {
-    vertical-align: top;
-    position: sticky;
-    background-color: YELLOW;
-    
-    top: 0;
+    vertical-align: middle;
 }
 
 .tabela-calendarios .tabela-calendarios-nome-cabecalho {
-    border: 1px solid black;
     vertical-align: middle;
     font-size: x-large;
     padding: 8px 12px;
     font-weight: bold;
-    background-color: YELLOW;
-    
-    position: sticky;
-    top: 0;
+
 }
 
 /*

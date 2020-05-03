@@ -46,7 +46,7 @@
             NEUTRO: 0, SIM: 1, NAO: 2, MISTO: 3
         };
 
-    var nomes = ["Geral","Adriano", "Betão", "Fernando", "Fred Dutra", "Fred Luciano", "Paulão"];
+    var nomes = ["Geral","Adriano", "Betão", "Fernando", "Fred DM", "Fred Careca", "Paulão", "Barbaro"];
         
     var valores = new Array();
 
@@ -65,7 +65,7 @@
     /**
      * this function will create month table.
      *
-     * @param object data   this contains the calendar data
+     * @param object data this contains the calendar data
      * @param object option this is the settings object
      * @return html
      */
@@ -756,16 +756,12 @@
     }
 
 
-
-
     //events
     onload();
     onClick();
 
     //attach to global window object
     global.dycalendar = dycalendar;
-
-
 
     function retrieveData() {
         
@@ -801,9 +797,7 @@
                 xxhr.send();
             }       
         };
-        xhr.send();
-        
-
+        xhr.send();    
     }
 
     function writeData(ranges, rangesValues) {
@@ -923,11 +917,7 @@
     }
 
     function teste() {
-
-
-        var row = '"9","10","11","12"';
-        
-
+       var row = '"9","10","11","12"';
 
         var gs_sid = '12ot_Wbhk1VmJn5UutzR69oRH42tmLL_-3by5zIw_n4E'; // Enter your Google Sheet ID here
         var gs_clid = '100883981961-e2btj6pveo11eg212a6ub3svk067fb41.apps.googleusercontent.com'; // Enter your API Client ID here
