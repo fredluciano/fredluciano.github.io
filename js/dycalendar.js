@@ -46,7 +46,7 @@
             NEUTRO: 0, SIM: 1, NAO: 2, MISTO: 3
         };
 
-    var nomes = ["Geral","Adriano", "Betão", "Fernando", "Fred Dutra", "Fred Luciano", "Paulão"];
+    var nomes = ["Geral","Adriano", "Betão", "Fernando", "Fred Dutra", "Arthur", "Paulão"];
         
     var valores = new Array();
 
