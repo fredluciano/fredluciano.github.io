@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Axie Energy Tracker</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</head>
+
+<body id="pageBody">
+    <div class="row">
+        <div class="col-sm-6" align="center">
+            <!--
+            <div>
+                <button type="button" class="btn btn-warning" onclick="reset();">Reset</button>
+            </div>
+            -->
+            <div class="card text-center" style="width: 8rem;">
+                <div class="card-body">
+                    <div id="counter" class="card-text" style="font-size: 4em;">10</div>
+
+                </div>
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-danger btn-lg" onclick="decrement();">-1</button><button
+                    type="button" class="btn btn-success btn-lg" onclick="increment();">+1</button>
+            </div>
+            <div>
+                <button type="button" class="btn btn-info" onclick="endTurn();">End Turn</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let value = 0;
+        let counter = document.getElementById('counter');
+        reset()
+
+        function increment() {
+            value++;
+            if (value > 10) value = 10;
+            counter.innerHTML = value;
+        }
+
+        function decrement() {
+            value--;
+            if (value < 0) value = 0;
+            counter.innerHTML = value;
+        }
+
+        function reset() {
+            value = 3;
+            counter.innerHTML = value;
+        }
+
+        function endTurn() {
+            increment();
+            increment();
+        }
+
+    </script>
+
+    <script>
+        // document.getElementById('pageBody').addEventListener('keydown', (e) => {
+        //     arrowUp
+        //     arrowDown
+        //     arrowRight
+
+
+        //     alert(`Key "${e.key}" pressed`);
+        // });
+        window.addEventListener("keydown", function (event) {
+            if (event.defaultPrevented) {
+                return; // Do nothing if the event was already processed
+            }
+
+            switch (event.key) {
+                case "Down": // IE/Edge specific value
+                case "ArrowDown":
+                    endTurn();
+                    break;
+                case "Up": // IE/Edge specific value
+                case "ArrowUp":
+                    endTurn();
+                    break;
+                case "Left": // IE/Edge specific value
+                case "ArrowLeft":
+                    decrement();
+                    break;
+                case "Right": // IE/Edge specific value
+                case "ArrowRight":
+                    increment();
+                    break;
+                case "Enter":
+                    // Do something for "enter" or "return" key press.
+                    break;
+                case "Esc": // IE/Edge specific value
+                case "Escape":
+                    // Do something for "esc" key press.
+                    break;
+                default:
+                    return; // Quit when this doesn't handle the key event.
+            }
+
+            // Cancel the default action to avoid it being handled twice
+            event.preventDefault();
+        }, true);
+    </script>
+
+</body>
+
+
+
+</html>
